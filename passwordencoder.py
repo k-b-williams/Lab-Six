@@ -1,6 +1,5 @@
-"""
 @author: Kennith Williams
-"""
+
 
 # Initializing Variables
 encoderRunning = True
