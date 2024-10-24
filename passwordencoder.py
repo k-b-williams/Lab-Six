@@ -18,7 +18,16 @@ def encode(originalPassword):
       intPassword = (intPassword + 3) % 10
       #New password with the current digit concatinated onto it
       newPassword = newPassword + str(intPassword)
-      
+
+# Cade Challenger
+# Password Decoder Function
+def decode(encodedPassword):
+    decodedPassword = ""
+    for char in encodedPassword:
+        intPassword = (int(char) - 3) % 10  # Shift back by 3
+        decodedPassword += str(intPassword)
+    return decodedPassword
+# Cade Challenger
 
 def main():
     global encoderRunning
@@ -32,6 +41,16 @@ def main():
           print("Your password has been encoded and stored!")
         else: 
           print("Please enter an 8-digit numeric password.")
+
+    # Cade Challenger
+    elif optionSelect == 2:
+        if newPassword:
+            decodedPassword = decode(newPassword)
+            print(f"The encoded password is {newPassword}, and the original password is {decodedPassword}.")
+        else:
+            print("No password has been encoded yet.")
+    # Cade Challenger
+
     elif optionSelect == 3:
         #Setting encoderRunning to false ends the while loop
         encoderRunning = False
